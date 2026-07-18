@@ -117,6 +117,15 @@ Available in core version greater than **1.5.0**
  * `AVREF`: VrefInt, internal voltage reference
  * `AVBAT`: Vbat voltage
 
+### ADC read resolution (bits)
+
+Currently, `analogRead(pin)` returns a 10 bit resolution, to mimic an 'uno' behavior, this is in case some libraries expects
+10 bits.
+
+This can be updated using `analogReadResolution(int bits)`, e.g. `analogReadResolution(12)` to get a native resolution say 12 bits from the stm32 ADC
+
+### ADC sampling time
+
 A minimum ADC sampling time is required when reading internal channels so default is set it to max possible value. It can be defined more precisely by defining:
  * `ADC_SAMPLINGTIME_INTERNAL`
 to the desired ADC sample time.
